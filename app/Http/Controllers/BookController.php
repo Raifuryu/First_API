@@ -77,13 +77,13 @@ class BookController extends Controller
             'authorid' => 'required|not_in:0',
         ];
         $this->validate($request, $rules);
+
         $books = Book::findOrFail($id);
 
         $books->fill($request->all());
         // if no changes happen
         if ($books->isClean()) {
-            return $this->errorResponse('At least one value must
-change', Response::HTTP_UNPROCESSABLE_ENTITY);
+            return $this->errorResponse('At least one value must change', Response::HTTP_UNPROCESSABLE_ENTITY);
         }
         $books->save();
         return $this->successResponse($books);
@@ -104,8 +104,7 @@ change', Response::HTTP_UNPROCESSABLE_ENTITY);
         return $this->successResponse($user);
         }
         {
-        return $this->errorResponse('User ID Does Not Exists',
-        Response::HTTP_NOT_FOUND);
+        return $this->errorResponse('User ID Does Not Exists', Response::HTTP_NOT_FOUND);
         }
         */
     }

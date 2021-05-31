@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 // unsecure routes
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/users', ['uses' => 'UserController@getUsers']);
+    $router->get('/books', ['uses' => 'BookController@getUsers']);
 });
 // more simple routes
 $router->get('/books', 'BookController@index'); // Get all books from Books Service
