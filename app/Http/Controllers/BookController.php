@@ -15,11 +15,6 @@ class BookController extends Controller
     {
         $this->request = $request;
     }
-    public function getUsers()
-    {
-        $books = Book::all();
-        return $this->response($books, 200);
-    }
 
     /**
      * Return the list of users
